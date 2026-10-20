@@ -1,0 +1,155 @@
+/* Import Nunito Font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
+/* Reset and Box Sizing */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    /* Soft, warm cream background */
+    background-color: #f7f4ed;
+    /* Rich warm charcoal for readable, mellow text */
+    color: #38332d;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navigation Header */
+header {
+    background-color: #e8e2d5;
+    padding: 24px 48px;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100%;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+}
+
+.logo a {
+    text-decoration: none;
+    color: #38332d;
+    transition: color 0.2s ease;
+}
+
+.logo a:hover {
+    color: #786f63;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 16px; /* Slightly closer together to look neat like a button group */
+    margin: 0;
+    padding: 0;
+}
+
+/* Rounded Button Styling for Navigation Links */
+nav a {
+    text-decoration: none;
+    color: #38332d;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: #f7f4ed; /* Cream background for the buttons */
+    padding: 10px 20px; /* Gives them padding so they look like buttons */
+    border-radius: 50px; /* Fully rounded pill edges */
+    box-shadow: 0 2px 4px rgba(56, 51, 45, 0.05); /* Subtle soft depth */
+    transition: all 0.2s ease;
+}
+
+/* Hover effect for the buttons */
+nav a:hover {
+    background-color: #ded6c5; /* Slightly deeper warm shade on hover */
+    color: #26221e;
+    transform: translateY(-1px); /* Slight lift effect */
+}
+
+/* Main Section Layout */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    max-width: 1100px;
+    width: 100%;
+    margin: 60px auto;
+    padding: 0 24px;
+    gap: 40px;
+}
+
+/* Left Content Card */
+.bio-card {
+    background-color: #e8e2d5;
+    padding: 40px;
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 380px;
+    border-radius: 16px;
+}
+
+.bio-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.bio-text p {
+    margin-bottom: 20px;
+}
+
+.bio-card-footer {
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-top: 30px;
+    color: #575046;
+}
+
+/* Right Image Container */
+.profile-card {
+    background-color: #e8e2d5;
+    flex: 0.8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 380px;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+.profile-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        margin: 30px auto;
+    }
+
+    .profile-card {
+        min-height: 300px;
+    }
+}
