@@ -1,0 +1,331 @@
+/* Import Nunito Font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
+/* Theme Color Variables (Default: Warm Cream) */
+:root {
+    --bg-main: #f7f4ed;
+    --bg-header: #e8e2d5;
+    --bg-card: #e8e2d5;
+    --bg-pill: #f7f4ed;
+    --bg-pill-hover: #ded6c5;
+    --border-subtle: #dcd4c4;
+    --text-main: #38332d;
+    --text-muted: #6b635b;
+    --accent-bar: #38332d;
+    --shadow-soft: 0 4px 14px rgba(56, 51, 45, 0.06);
+}
+
+/* Dark Espresso Theme Variables */
+body.dark-theme {
+    --bg-main: #1c1917;
+    --bg-header: #26221f;
+    --bg-card: #26221f;
+    --bg-pill: #342f2b;
+    --bg-pill-hover: #453e39;
+    --border-subtle: #38322e;
+    --text-main: #f2ede4;
+    --text-muted: #b5aca0;
+    --accent-bar: #d6c8b4;
+    --shadow-soft: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* Reset and Box Sizing */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Smooth scrolling for navbar links */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+/* Base Body Styling with Smooth Theme Transition */
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Distinct Sticky Navigation Header Bar */
+header {
+    background-color: var(--bg-header);
+    border-bottom: 2px solid var(--border-subtle);
+    padding: 20px 48px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: background-color 0.4s ease, border-color 0.4s ease;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.logo a {
+    text-decoration: none;
+    color: var(--text-main);
+    transition: color 0.2s ease;
+}
+
+.logo a:hover {
+    color: var(--text-muted);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style: none;
+    gap: 16px;
+}
+
+/* Rounded Pill Button Styling for Navigation Links & Theme Toggle */
+nav a,
+.theme-toggle-btn {
+    text-decoration: none;
+    color: var(--text-main);
+    font-family: 'Nunito', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: var(--bg-pill);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
+}
+
+nav a:hover,
+.theme-toggle-btn:hover {
+    background-color: var(--bg-pill-hover);
+    transform: translateY(-2px);
+}
+
+/* Main Content Area */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    padding: 40px 5%;
+    padding-bottom: 80px;
+}
+
+/* Top Row: Bio Card + Profile Picture Side-by-Side */
+.hero-row {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1300px;
+}
+
+/* Left Content Card */
+.bio-card {
+    background-color: var(--bg-card);
+    padding: 40px;
+    flex: 1.2;
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 20px;
+    box-shadow: var(--shadow-soft);
+}
+
+.bio-text {
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.bio-text h1 {
+    font-size: 2rem;
+    margin-bottom: 6px;
+}
+
+.bio-text h2 {
+    font-size: 1.35rem;
+    margin-top: 24px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.bio-text p {
+    margin-bottom: 16px;
+}
+
+/* Right Image Container */
+.profile-card {
+    background-color: var(--bg-card);
+    flex: 0.8;
+    min-width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: var(--shadow-soft);
+}
+
+.profile-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.profile-card:hover img {
+    transform: scale(1.03);
+}
+
+/* Bottom Row: Background Section Container */
+.background-section {
+    width: 100%;
+    max-width: 1300px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Matching Rounded Cards for Roots, Strengths, and Weaknesses */
+.roots-card,
+.trait-card {
+    background-color: var(--bg-card);
+    padding: 35px;
+    border-radius: 20px;
+    line-height: 1.6;
+    box-shadow: var(--shadow-soft);
+}
+
+.roots-card h2,
+.trait-card h3 {
+    margin-bottom: 14px;
+}
+
+.roots-card p {
+    margin-bottom: 14px;
+}
+
+/* Place Strengths and Weaknesses Side-by-Side */
+.traits-row {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.trait-card {
+    flex: 1;
+    min-width: 300px;
+}
+
+.trait-card ul,
+.bio-card ul {
+    padding-left: 20px;
+    margin-top: 8px;
+}
+
+.trait-card li,
+.bio-card li {
+    margin-bottom: 12px;
+}
+
+/* Satisfying Scroll-Reveal & Card Hover Animations */
+.reveal-card {
+    opacity: 0;
+    transform: translateY(32px) scale(0.985);
+    transition: 
+        opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+        background-color 0.4s ease,
+        box-shadow 0.3s ease;
+}
+
+.reveal-card.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.reveal-card.is-visible:hover {
+    transform: translateY(-4px);
+}
+
+/* Responsive Layout for Smaller Screens */
+@media (max-width: 768px) {
+    header {
+        padding: 16px 24px;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    main {
+        padding: 30px 20px;
+    }
+
+    .profile-card {
+        min-height: 320px;
+    }
+}
+
+/* Contact & Socials Grid Styling */
+.contact-card .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.contact-item {
+    background-color: var(--bg-pill);
+    padding: 16px 20px;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s ease, background-color 0.25s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-2px);
+    background-color: var(--bg-pill-hover);
+}
+
+.contact-item a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+}
